@@ -1,0 +1,29 @@
+module demomodule {
+    namespace "urn:de:fraunhofer:fkie:demomodule";
+
+    prefix dm;
+
+    contact
+        "Editor: Henning Rogge <mailto:henning.rogge@fkie.fraunhofer.de>";
+
+    description "Standalone demo for debugging PUT request";
+
+    revision "2023-07-31" {
+        description "Demo for debugging";
+    }
+
+    typedef node-id {
+        description "Unique identification of a single router";
+        type string;
+    }
+
+    container demomodule {
+        container dataprovider {
+            leaf node-id {
+                description "ID of the router providing this data";
+
+                type node-id;
+            }
+        }
+    }
+}
