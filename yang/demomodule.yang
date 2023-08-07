@@ -12,18 +12,9 @@ module demomodule {
         description "Demo for debugging";
     }
 
-    typedef node-id {
-        description "Unique identification of a single router";
-        type string;
-    }
-
-    container demomodule {
-        container dataprovider {
-            leaf node-id {
-                description "ID of the router providing this data";
-
-                type node-id;
+    container democontainer {
+            leaf nodeid {
+                type string;
             }
-        }
     }
 }

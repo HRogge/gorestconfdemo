@@ -1,5 +1,5 @@
 curl get:
-> curl -o - -XGET -H 'Accept:application/yang-data+json' http://127.0.0.1:8089/restconf/data/demomodule:demomodule
+> curl -o - -XGET -H 'Accept:application/yang-data+json' http://127.0.0.1:8089/restconf/data/demomodule:democontainer
 
 curl put:
-> curl -o - -XPUT -d @put_test.json -H 'Accept:application/yang-data+json' http://127.0.0.1:8089/restconf/data/demomodule:demomodule
+> curl -o - -XPUT -d @put_test.json -H 'Accept:application/yang-data+json' http://127.0.0.1:8089/restconf/data/demomodule:democontainer

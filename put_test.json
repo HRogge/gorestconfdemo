@@ -1,5 +1,3 @@
 {
-  "demomodule:dataprovider": {
-    "node-id": "platform01"
-  }
+  "demomodule:nodeid": "platform01"
 }

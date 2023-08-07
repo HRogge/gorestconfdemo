@@ -3,38 +3,31 @@ package main
 import (
 	"embed"
 	"fmt"
-	"net/http"
-	"reflect"
-
 	"github.com/freeconf/restconf"
 	"github.com/freeconf/restconf/device"
 	"github.com/freeconf/yang/nodeutil"
 	"github.com/freeconf/yang/source"
+	"net/http"
+	"reflect"
 )
 
 //go:embed yang/*.yang
 var Yang embed.FS
 
 type Model struct {
-	DemoModule DemoModule `yang:"demomodule"`
-}
-
-type DemoModule struct {
-	DataProvider DataProvider `yang:"dataprovider"`
+	Democontainer DataProvider
 }
 
 type DataProvider struct {
-	NodeID NodeID `yang:"node-id"`
+	Nodeid NodeID
 }
 
 type NodeID string
 
 func main() {
 	model := Model{
-		DemoModule: DemoModule{
-			DataProvider: DataProvider{
-				NodeID: "initial",
-			},
+		Democontainer: DataProvider{
+			Nodeid: "initial",
 		},
 	}
 	dev := device.New(source.EmbedDir(Yang, "yang"))
