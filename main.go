@@ -15,20 +15,21 @@ import (
 var Yang embed.FS
 
 type Model struct {
-	Democontainer DataProvider
+	Democontainer *DemoContainer
 }
 
-type DataProvider struct {
-	Nodeid NodeID
+type DemoContainer struct {
+	Demolist []DemoEntry
 }
 
-type NodeID string
+type DemoEntry struct {
+	Name  string
+	Value float64
+}
 
 func main() {
 	model := Model{
-		Democontainer: DataProvider{
-			Nodeid: "initial",
-		},
+		Democontainer: &DemoContainer{},
 	}
 	dev := device.New(source.EmbedDir(Yang, "yang"))
 

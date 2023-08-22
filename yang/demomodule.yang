@@ -6,15 +6,26 @@ module demomodule {
     contact
         "Editor: Henning Rogge <mailto:henning.rogge@fkie.fraunhofer.de>";
 
-    description "Standalone demo for debugging PUT request";
+    description "Standalone demo for debugging enum list request";
 
     revision "2023-07-31" {
         description "Demo for debugging";
     }
 
     container democontainer {
-            leaf nodeid {
-                type string;
+        list demolist {
+            key "name";
+
+            leaf name {
+                // type string;
+                type enumeration {
+                    enum MAX_BITRATE_RX;
+                    enum MAX_BITRATE_TX;
+                }
             }
+            leaf value {
+                type decimal64;
+            }
+        }
     }
 }

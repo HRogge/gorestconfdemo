@@ -1,3 +1,14 @@
 {
-  "demomodule:nodeid": "platform01"
+  "demomodule:democontainer": {
+    "demolist": [
+      {
+        "name": "MAX_BITRATE_RX",
+        "value": "1.0"
+      },
+      {
+        "name": "MAX_BITRATE_TX",
+        "value": "2.0"
+      }
+    ]
+  }
 }
